@@ -1,0 +1,39 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-unused-vars": 1,
+    "max-len": [
+      "error",
+      { "code": 140, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true }
+    ],
+    "max-lines": ["error", 300],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "multiline": true, "minProperties": 5 },
+        "ObjectPattern": { "multiline": true, "minProperties": 5 },
+        "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+        "ExportDeclaration": "never"
+      }
+    ],
+    "semi": ["error", "never"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": ["error", "never", { "svg": "always", "style": "always", "json": "always" }],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/function-component-definition": "off",
+    "react/jsx-child-element-spacing": "error",
+    "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
+    "react/jsx-max-props-per-line": [2, { "maximum": 3 }]
+  }
+}
