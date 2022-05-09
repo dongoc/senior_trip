@@ -1,7 +1,8 @@
 import { collection, addDoc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from '@/firebase'
+import { Trip } from '@types'
 
-export const createTrip = async () => {
+export const createTrip = async (trip: Trip) => {
   try {
     const docRef = await addDoc(collection(db, 'trips'), {
       first: 'Ada',
