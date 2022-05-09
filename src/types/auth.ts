@@ -10,3 +10,13 @@ export type AuthLevelCondition = {
   lt?: number
   only?: number
 }
+
+export type User = {
+  username: string
+  email: string
+}
+
+export type Auth = {
+  auth_level: AuthLevel
+  profile: User
+}

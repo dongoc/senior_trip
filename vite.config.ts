@@ -16,6 +16,7 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, 'src/views/pages'),
       '@fb': path.resolve(__dirname, 'src/firebase'),
       '@module': path.resolve(__dirname, 'src/module'),
+      '@hooks': path.resolve(__dirname, 'src/lib/hooks'),
     },
   },
   plugins: [react(), tsconfigPaths()],
