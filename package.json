@@ -9,6 +9,10 @@
     "eslint": "node_modules/eslint/bin/eslint.js src"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.4",
+    "@mui/styled-engine-sc": "^5.6.1",
     "@types/styled-components": "^5.1.25",
     "connected-react-router": "^6.9.2",
     "firebase": "^9.8.0",

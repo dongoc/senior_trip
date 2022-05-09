@@ -1,10 +1,10 @@
 import { spawn } from 'redux-saga/effects'
 import authSaga from './auth/authSaga'
-import tripDetailSaga from './trip/tripDetailSaga'
+import tripSaga from './trip/tripSaga'
 
 function* rootSaga() {
   yield spawn(authSaga)
-  yield spawn(tripDetailSaga)
+  yield spawn(tripSaga)
 }
 
 export default rootSaga

@@ -9,6 +9,7 @@ const Trip = () => {
       <Route index element={<TripList />} />
       <Route path=':trip_id' element={<TripDetail />} />
       <Route path='new' element={<TripForm />} />
+      <Route path='update' element={<TripForm />} />
     </Routes>
   )
 }

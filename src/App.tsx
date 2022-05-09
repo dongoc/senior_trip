@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux'
-import { BrowserRouter, Router } from 'react-router-dom'
+import { unstable_HistoryRouter as HistoryRouter, Router } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from '@modules/rootStore'
 import RootRouter from '@/RootRouter'
@@ -10,7 +10,7 @@ import { BaseContainer, PageContainer } from '@/components/atoms/layouts'
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HistoryRouter history={history}>
         <GlobalStyles />
         <Header />
         <PageContainer>
@@ -18,7 +18,7 @@ function App() {
             <RootRouter />
           </BaseContainer>
         </PageContainer>
-      </BrowserRouter>
+      </HistoryRouter>
     </Provider>
   )
 }

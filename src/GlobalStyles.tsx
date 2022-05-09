@@ -29,7 +29,7 @@ export default createGlobalStyle`
 
     --header-height: 70px;
     --footer-height: 40px;
-    --button-height: 50px;
+    --button-height: 60px;
 
     --screen-width: 960px;
     --tablet-width: 768px;

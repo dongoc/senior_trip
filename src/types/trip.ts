@@ -5,13 +5,19 @@ export type Member = {
   role?: Role
 }
 
+export type Destination = {
+  country: string
+  cities: string[]
+}
+
 export type Trip = {
-  id: string | number
+  id: number
   title: string
   thumbnail_img?: string
   start_date: string
   end_date: string
-  destinations?: unknown
+  destinations?: Destination[]
   members: Member[]
-  user_id: string | number
 }
+
+export type TripForm = Trip

@@ -13,7 +13,7 @@ const reduxSaga = createSagaMiddleware({
   },
 })
 const middlewares = [routerMiddleware(history), reduxSaga]
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middlewares)))
+const store = createStore(rootReducer(history), composeWithDevTools(applyMiddleware(...middlewares)))
 
 reduxSaga.run(rootSaga)
 

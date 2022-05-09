@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const PageContainer = styled.div`
   width: 100%;
-  height: 100vh;
-  padding-top: var(--header-height);
+  padding-top: var(--header-height); // header
+  padding-bottom: calc(var(--button-height) + 2 * var(--spacing-m)); // button
   background: var(--color-background);
 `
 

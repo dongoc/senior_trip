@@ -1,23 +1,44 @@
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { FixedButton } from '@/components/atoms/buttons'
 import { Heading2 } from '@/components/atoms/typographies'
 import TripCard from '@/components/TripCard'
-import { useNavigate } from 'react-router-dom'
-
-const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+import { useSelector } from '@/lib/hooks'
+import { deleteTripList } from '@/modules/trip/tripListReducer'
+import { Trip } from '@/types'
+import { updateTripForm } from '@/modules/trip/tripFormReducer'
 
 const TripList = () => {
+  const { trip_list } = useSelector((state) => state.trip)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const onCardClick = (id: number) => {
-    console.log(id)
     navigate(`${id}`)
+  }
+
+  const onCreateTrip = () => {
+    navigate('new')
+  }
+
+  const onUpdateTrip = (trip: Trip) => {
+    dispatch(updateTripForm(trip))
+    navigate('update')
+  }
+
+  const onDeleteTrip = (id: number) => {
+    dispatch(deleteTripList(id))
   }
 
   return (
     <div>
       <Heading2>TripList</Heading2>
-      {list.map((trip) => {
-        return <TripCard key={trip} id={trip} onClick={onCardClick} />
+      {trip_list.map((trip) => {
+        return (
+          <TripCard key={trip.id} trip={trip} onClick={onCardClick} onUpdate={onUpdateTrip} onDelete={onDeleteTrip} />
+        )
       })}
+      <FixedButton onClick={onCreateTrip}>새 여행 추가하기</FixedButton>
     </div>
   )
 }
