@@ -1,6 +1,7 @@
 import { AuthLevel, AuthLevelCondition } from '@types'
-import { Route, RouteProps, Navigate } from 'react-router-dom'
-import { useSelector } from '@hooks/index'
+import { Navigate } from 'react-router-dom'
+import { useSelector } from '@hooks/useSelector'
+import { ReactElement } from 'react'
 
 type IsPassableAuthLevelProps = AuthLevelCondition & {
   auth_level: AuthLevel
@@ -14,17 +15,16 @@ export const isPassableAuthLevel = (props: IsPassableAuthLevelProps): boolean =>
   return true
 }
 
-type AuthRouteProps = RouteProps &
-  AuthLevelCondition & {
-    redirectTo: string
-  }
+export type AuthRouteProps = AuthLevelCondition & {
+  children: ReactElement | null
+  redirectTo: string
+}
 
 const AuthRoute = (props: AuthRouteProps) => {
-  const { path, element, gte, lt, only, redirectTo } = props
+  const { children, gte, lt, only, redirectTo } = props
   const { auth_level } = useSelector((state) => state.auth)
-  // const passed = isPassableAuthLevel({ auth_level, gte, lt, only })
-  const passed = true
-  return passed ? <Route path={path} element={element} /> : <Navigate to={redirectTo} replace />
+  const passed = isPassableAuthLevel({ auth_level, gte, lt, only })
+  return passed ? children : <Navigate to={redirectTo} replace />
 }
 
 export default AuthRoute

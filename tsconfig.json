@@ -21,8 +21,8 @@
       "@assets/*": ["src/assets/*"],
       "@lib/*": ["src/lib/*"],
       "@types": ["src/types/index.ts"],
-      "@components/*": ["src/views/components/*"],
-      "@pages/*": ["src/views/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
       "@fb/*": ["src/firebase/*"],
       "@modules/*": ["src/modules/*"],
       "@hooks/*": ["src/lib/hooks/*"]
