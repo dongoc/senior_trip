@@ -1,12 +1,15 @@
-import { Routes, Route, RouteProps } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import AuthRoute, { AuthRouteProps } from '@components/AuthRoute'
+import LoginPage from '@/pages/auth/Login'
+import HomePage from '@/pages/HomePage'
+import Trip from '@/pages/trip'
 
 const routes: (AuthRouteProps & { path: string })[] = [
-  { path: '/', children: <div>Home</div>, gte: 0, redirectTo: '/' },
-  { path: 'login', children: <div>login</div>, gte: 0, lt: 1, redirectTo: '/' },
+  { path: '/', children: <HomePage />, gte: 0, lt: 1, redirectTo: 'trip' },
+  { path: 'login', children: <LoginPage />, gte: 0, lt: 1, redirectTo: '/' },
   { path: 'register', children: <div>register</div>, gte: 0, lt: 1, redirectTo: '/' },
-  { path: 'trip', children: <div>trip</div>, gte: 1, redirectTo: '/login' },
-  { path: 'settings', children: <div>settings</div>, gte: 1, redirectTo: '/login' },
+  { path: 'trip/*', children: <Trip />, gte: 1, redirectTo: 'login' },
+  { path: 'settings', children: <div>settings</div>, gte: 1, redirectTo: 'login' },
 ]
 
 const RootRouter = () => {
