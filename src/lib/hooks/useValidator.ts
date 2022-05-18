@@ -11,6 +11,7 @@ export const useValidator = (nameList: string[]) => {
   const [form, setForm] = useState<Record<string, FormInfo>>(initialState)
 
   const onValidate = (name: string, value: string) => {
+    // 더 좋은 방법이 없을까
     if (name === 'passwordConfirm') {
       const { password } = form
       if (value === '') {

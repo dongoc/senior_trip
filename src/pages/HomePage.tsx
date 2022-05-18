@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { PageContainer } from '@/components/atoms/layouts'
 import { MdPlace } from 'react-icons/md'
 import { PrimaryOutlineButton, PrimarySolidButton } from '@/components/atoms/buttons'
 import { useNavigate } from 'react-router-dom'

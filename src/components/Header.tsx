@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { IoIosArrowBack } from 'react-icons/io'
+import { MdArrowBack } from 'react-icons/md'
 import { BaseContainer, FlexCenter } from '@/components/atoms/layouts'
 import { Headline1 } from '@/components/atoms/typographies'
 import { useNavigate } from 'react-router-dom'
@@ -44,7 +44,7 @@ const Header = (props: HeaderProps) => {
       <HeaderContainer>
         {hasBackButton ? (
           <BackButton onClick={() => navigate(-1)}>
-            <IoIosArrowBack />
+            <MdArrowBack size='24px' />
           </BackButton>
         ) : null}
         <Headline1>{title}</Headline1>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Headline1 = styled.h1`
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 `
 

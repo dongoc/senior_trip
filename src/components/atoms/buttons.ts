@@ -7,7 +7,7 @@ export const PrimarySolidButton = styled.button`
   border-radius: 8px;
   background-color: var(--color-primary);
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 

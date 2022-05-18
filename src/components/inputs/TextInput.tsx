@@ -22,7 +22,7 @@ const Input = styled.input`
   border: 1px solid var(--color-typography-2);
   border-radius: 8px;
   background-color: var(--color-white);
-  font-size: 12px;
+  font-size: 16px;
   outline: none;
 
   &::placeholder {
@@ -37,7 +37,7 @@ const Input = styled.input`
 const InputError = styled.div`
   height: 15px;
   color: var(--color-warning);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 15px;
 `
 
