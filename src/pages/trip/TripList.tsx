@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { FixedButton } from '@/components/atoms/buttons'
-import { Heading2 } from '@/components/atoms/typographies'
+import { Headline2 } from '@/components/atoms/typographies'
 import TripCard from '@/components/TripCard'
 import { useSelector } from '@/lib/hooks'
 import { deleteTripList } from '@/modules/trip/tripListReducer'
@@ -32,7 +32,7 @@ const TripList = () => {
 
   return (
     <div>
-      <Heading2>TripList</Heading2>
+      <Headline2>TripList</Headline2>
       {trip_list.map((trip) => {
         return (
           <TripCard key={trip.id} trip={trip} onClick={onCardClick} onUpdate={onUpdateTrip} onDelete={onDeleteTrip} />

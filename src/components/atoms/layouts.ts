@@ -2,14 +2,14 @@ import styled from 'styled-components'
 
 export const PageContainer = styled.div`
   width: 100%;
-  padding-top: var(--header-height); // header
-  padding-bottom: calc(var(--button-height) + 2 * var(--spacing-m)); // button
-  background: var(--color-background);
+  margin-top: var(--header-height); // header
+  background: var(--color-white);
 `
 
 export const BaseContainer = styled.div`
   max-width: var(--screen-width);
   min-width: var(--mobile-width);
+  min-height: calc(100vh - var(--header-height));
   margin: 0 auto;
   padding: 0 var(--spacing-m);
 `

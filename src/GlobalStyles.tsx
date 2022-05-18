@@ -7,6 +7,8 @@ export default createGlobalStyle`
 	:root {
     --color-black: #282828;
     --color-white: #ffffff;
+    
+    /* 임시 디자인 */
     --color-grey-primary: #b4b4b4;
     --color-blue-primary: #3843d0;
     --color-blue-dark: #15006D;
@@ -16,6 +18,13 @@ export default createGlobalStyle`
     --color-red-primary: #f96232;
     --color-green-primary: #6AC7B6; 
     --color-background: #F3EADC;
+
+    /* 지민이 디자인 */
+    --color-primary: #317452;
+    --color-typography-1: #222222;
+    --color-typography-2: #999999;
+    --color-disabled: #DDDDDD;
+    --color-warning: #FF0000;
 
     --spacing-xxs: 5px;
     --spacing-xs: 10px;
@@ -27,9 +36,10 @@ export default createGlobalStyle`
     --spacing-xxl-2: 100px;
     --spacing-xxl-3: 200px;
 
-    --header-height: 70px;
+    --header-height: 64px;
     --footer-height: 40px;
-    --button-height: 60px;
+    --button-height: 50px;
+    --input-height: 50px;
 
     --screen-width: 960px;
     --tablet-width: 768px;

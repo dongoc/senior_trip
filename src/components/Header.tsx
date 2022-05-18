@@ -1,25 +1,53 @@
 import styled from 'styled-components'
-import { MdPlace } from 'react-icons/md'
-import { BaseContainer } from '@/components/atoms/layouts'
+import { IoIosArrowBack } from 'react-icons/io'
+import { BaseContainer, FlexCenter } from '@/components/atoms/layouts'
+import { Headline1 } from '@/components/atoms/typographies'
+import { useNavigate } from 'react-router-dom'
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.header<{ backgroundColor?: string }>`
   position: fixed;
   top: 0;
-  background: var(--color-background);
+  left: 0;
+  background: ${(p) => p.backgroundColor || 'var(--color-white)'};
 `
 
 const HeaderContainer = styled(BaseContainer)`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  grid-template-areas: 'back title blank';
+  justify-content: center;
   align-items: center;
   height: var(--header-height);
+  min-height: var(--header-height);
+  max-height: var(--header-height);
 `
 
-const Header = () => {
+const BackButton = styled(FlexCenter)`
+  grid-area: 'back';
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+`
+
+type HeaderProps = {
+  hasBackButton?: boolean
+  title: string
+  backgroundColor?: string
+}
+
+const Header = (props: HeaderProps) => {
+  const navigate = useNavigate()
+  const { title, hasBackButton, backgroundColor } = props
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper backgroundColor={backgroundColor}>
       <HeaderContainer>
-        <MdPlace size='40px' color='var(--color-blue-primary)' />
+        {hasBackButton ? (
+          <BackButton onClick={() => navigate(-1)}>
+            <IoIosArrowBack />
+          </BackButton>
+        ) : null}
+        <Headline1>{title}</Headline1>
       </HeaderContainer>
     </HeaderWrapper>
   )

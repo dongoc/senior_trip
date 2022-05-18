@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 8px;
 `
 
 const InputLabel = styled.label`
@@ -17,29 +17,28 @@ const InputLabel = styled.label`
 
 const Input = styled.input`
   width: 100%;
-  padding: var(--spacing-xxs);
-  border: none;
-  border-bottom: 2px solid var(--color-black);
-  background-color: transparent;
-  font-size: 1.5rem;
+  height: var(--input-height);
+  padding: 0 var(--spacing-s);
+  border: 1px solid var(--color-typography-2);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  font-size: 12px;
   outline: none;
 
   &::placeholder {
-    color: var(--color-grey-primary);
+    color: var(--color-typography-2);
   }
 
   &:focus {
-    border-bottom: 2px solid var(--color-blue-primary);
-  }
-
-  &:invalid {
-    border-bottom: 2px solid var(--color-red-primary);
+    border: 1px solid var(--color-primary);
   }
 `
 
 const InputError = styled.div`
-  color: var(--color-red-primary);
-  font-size: 1rem;
+  height: 15px;
+  color: var(--color-warning);
+  font-size: 12px;
+  line-height: 15px;
 `
 
 export type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -53,9 +52,9 @@ export const TextInput = (props: TextInputProps) => {
   const { labelText, errorText, validator, ...inputProps } = props
   return (
     <InputWrapper>
-      {labelText && <InputLabel>{labelText}</InputLabel>}
+      {labelText ? <InputLabel>{labelText}</InputLabel> : null}
       <Input {...inputProps} />
-      <InputError>{errorText}</InputError>
+      {errorText ? <InputError>{errorText}</InputError> : null}
     </InputWrapper>
   )
 }

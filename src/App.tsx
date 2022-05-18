@@ -4,7 +4,6 @@ import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from '@modules/rootStore'
 import RootRouter from '@/RootRouter'
 import GlobalStyles from '@/GlobalStyles'
-import Header from '@/components/Header'
 import { BaseContainer, PageContainer } from '@/components/atoms/layouts'
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
     <Provider store={store}>
       <HistoryRouter history={history}>
         <GlobalStyles />
-        <Header />
         <PageContainer>
           <BaseContainer>
             <RootRouter />

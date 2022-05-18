@@ -5,6 +5,9 @@ import { resetTripForm, submitTripForm, updateTripForm } from '@/modules/trip/tr
 import { MouseEvent, ChangeEvent, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { updateTripList } from '@/modules/trip/tripListReducer'
+import { FixedButton } from '@/components/atoms/buttons'
+import { TextField } from '@mui/material'
+import DateRangePicker from '@/components/inputs/DateRangePicker'
 
 const TripForm = () => {
   const dispatch = useDispatch()
@@ -15,6 +18,7 @@ const TripForm = () => {
 
   const onInputChange = (e: ChangeEvent<HTMLFormElement>) => {
     const { name, value } = e.target
+    console.log({ [name]: value })
     dispatch(updateTripForm({ [name]: value }))
   }
 
@@ -29,12 +33,12 @@ const TripForm = () => {
 
   return (
     <div>
-      <div>TripForm</div>
+      <div>TripForm {id}</div>
       <form onChange={onInputChange} onSubmit={onSubmit}>
-        <div>{id}</div>
-        <input name='title' defaultValue={title} />
+        <TextField label='여행 제목' name='title' defaultValue={title} variant='standard' sx={{ width: '100%' }} />
+        <DateRangePicker />
         <div>{members.map((member) => member.name)}</div>
-        <button type='submit'>TripForm</button>
+        <FixedButton type='submit'>새 여행 추가하기</FixedButton>
       </form>
     </div>
   )

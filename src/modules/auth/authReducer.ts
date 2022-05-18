@@ -1,7 +1,7 @@
 import { ActionType, Auth, AuthLevel, User } from '@types'
 
 const initialAuthState: Auth = {
-  auth_level: 1,
+  auth_level: 0,
   profile: {
     username: '',
     email: '',

@@ -22,9 +22,9 @@ const RootRouter = () => {
             key={`${path}_route`}
             path={path}
             element={
-              <AuthRoute gte={gte} lt={lt} only={only} redirectTo={redirectTo}>
-                {children}
-              </AuthRoute>
+              // <AuthRoute gte={gte} lt={lt} only={only} redirectTo={redirectTo}>
+              children
+              // </AuthRoute>
             }
           />
         )
