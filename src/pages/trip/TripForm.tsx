@@ -8,6 +8,10 @@ import { updateTripList } from '@/modules/trip/tripListReducer'
 import { FixedButton } from '@/components/atoms/buttons'
 import { TextField } from '@mui/material'
 import DateRangePicker from '@/components/inputs/DateRangePicker'
+import styled from 'styled-components'
+import Header from '@/components/Header'
+
+const FormGrid = styled.form``
 
 const TripForm = () => {
   const dispatch = useDispatch()
@@ -32,15 +36,13 @@ const TripForm = () => {
   }, [])
 
   return (
-    <div>
-      <div>TripForm {id}</div>
-      <form onChange={onInputChange} onSubmit={onSubmit}>
-        <TextField label='여행 제목' name='title' defaultValue={title} variant='standard' sx={{ width: '100%' }} />
-        <DateRangePicker />
-        <div>{members.map((member) => member.name)}</div>
-        <FixedButton type='submit'>새 여행 추가하기</FixedButton>
-      </form>
-    </div>
+    <FormGrid onChange={onInputChange} onSubmit={onSubmit}>
+      <Header title='여행 추가' hasBackButton />
+      <TextField label='여행 제목' name='title' defaultValue={title} variant='standard' sx={{ width: '100%' }} />
+      {/* <DateRangePicker /> */}
+      <div>{members.map((member) => member.name)}</div>
+      <FixedButton type='submit'>새 여행 추가하기</FixedButton>
+    </FormGrid>
   )
 }
 

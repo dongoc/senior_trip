@@ -8,6 +8,7 @@ const HeaderWrapper = styled.header<{ backgroundColor?: string }>`
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   background: ${(p) => p.backgroundColor || 'var(--color-white)'};
 `
 
@@ -20,6 +21,10 @@ const HeaderContainer = styled(BaseContainer)`
   height: var(--header-height);
   min-height: var(--header-height);
   max-height: var(--header-height);
+`
+
+const Headline = styled(Headline1)`
+  grid-area: title;
 `
 
 const BackButton = styled(FlexCenter)`
@@ -47,7 +52,7 @@ const Header = (props: HeaderProps) => {
             <MdArrowBack size='24px' />
           </BackButton>
         ) : null}
-        <Headline1>{title}</Headline1>
+        <Headline>{title}</Headline>
       </HeaderContainer>
     </HeaderWrapper>
   )

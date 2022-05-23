@@ -25,6 +25,7 @@ export default createGlobalStyle`
     --color-typography-2: #999999;
     --color-disabled: #DDDDDD;
     --color-warning: #FF0000;
+    --color-card-background: #F9F9F9;
 
     --spacing-xxs: 5px;
     --spacing-xs: 10px;

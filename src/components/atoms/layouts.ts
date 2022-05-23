@@ -32,3 +32,9 @@ export const FlexAlignCenter = styled.div`
   flex-direction: row;
   align-items: center;
 `
+
+export const FlexSpaceBetween = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`

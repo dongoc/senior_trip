@@ -29,5 +29,28 @@ export const FixedButton = styled(PrimarySolidButton)`
   left: var(--spacing-m);
   bottom: var(--spacing-m);
   width: calc(100% - 2 * var(--spacing-m));
-  box-shadow: 0 var(--spacing-xxs) var(--spacing-xxs) rgba(0, 0, 0, 0.2);
+`
+
+type buttonVariant = 'normal' | 'dimmed' | 'warning'
+
+const getButtonColor = (variant?: buttonVariant) => {
+  switch (variant) {
+    case 'normal':
+    default:
+      return 'var(--color-black)'
+    case 'dimmed':
+      return 'var(--color-typography-2)'
+    case 'warning':
+      return 'var( --color-warning)'
+  }
+}
+
+export const TextButton = styled.button<{ variant?: buttonVariant }>`
+  width: 100%;
+  height: 26px;
+  border: none;
+  background-color: transparent;
+  color: ${(p) => getButtonColor(p.variant)};
+  font-size: 16px;
+  cursor: pointer;
 `
